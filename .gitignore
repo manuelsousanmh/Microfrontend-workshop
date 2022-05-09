@@ -1,0 +1,6 @@
+/about-microfrontend/node_modules
+/contact-microfrontend/node_modules
+/home-microfrontend/node_modules
+/host/node_modules
+.idea
+*.DS_store
