@@ -1,13 +1,10 @@
-import React, { Component, Suspense } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from './views/home/home';
 import Contact from './views/contact/contact';
 import About from './views/about/about';
-import Loading from './views/loading/loading';
-import './index.less'
-
-const About_mfe = React.lazy(() => import('about/About'));
+import './index.less';
 
 class App extends Component {
   constructor(props) {
