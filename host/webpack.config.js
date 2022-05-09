@@ -1,6 +1,4 @@
 const path = require('path');
-const ModuleFederationPlugin = 
-            require('webpack/lib/container/ModuleFederationPlugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -11,7 +9,7 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     hot: true,
-    port: 8081,
+    port: 8082,
   },
   module: {
     rules: [{
@@ -49,13 +47,5 @@ module.exports = {
       },
     }]
   },
-  mode: 'development',
-  plugins: [
-    new ModuleFederationPlugin({
-      name: 'container',
-      remotes: {
-        about: 'about@http://localhost:8084/remoteEntry.js',
-      },
-    })
-  ],
+  mode: 'development'
 };

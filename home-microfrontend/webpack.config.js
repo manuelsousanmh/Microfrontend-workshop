@@ -8,7 +8,7 @@ module.exports = {
     devtool: 'source-map',
     devServer: {
       hot: true,
-      port: 8082,
+      port: 8083,
     },
     module: {
         rules: [{
