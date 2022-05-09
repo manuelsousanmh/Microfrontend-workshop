@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     hot: true,
-    port: 8081,
+    port: 8082,
   },
   module: {
     rules: [{
@@ -54,9 +54,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
-        home: 'home@http://localhost:8082/remoteEntry.js',
-        contact: 'contact@http://localhost:8083/remoteEntry.js',
-        about: 'about@http://localhost:8084/remoteEntry.js',
+        home: 'home@http://localhost:8083/remoteEntry.js',
+        contact: 'contact@http://localhost:8084/remoteEntry.js',
+        about: 'about@http://localhost:8085/remoteEntry.js',
       },
     })
   ],
