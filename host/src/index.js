@@ -1,13 +1,12 @@
 import React, { Component, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from './views/home/home';
-import Contact from './views/contact/contact';
-import About from './views/about/about';
 import Loading from './views/loading/loading';
 import './index.less'
 
+const Contact_mfe = React.lazy(() => import('contact/Contact'));
 const About_mfe = React.lazy(() => import('about/About'));
+const Home_mfe = React.lazy(() => import('home/Home'));
 
 class App extends Component {
   constructor(props) {
@@ -42,9 +41,18 @@ class App extends Component {
 
         <div className="main-content">
           <Routes>
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/" element={<Home companyName="Dummy Company"/>} />
+            <Route path="/contact" element={
+              <Suspense fallback={<Loading />}>
+                <Contact_mfe />
+              </Suspense>} />
+            <Route path="/about" element={
+              <Suspense fallback={<Loading />}>
+                <About_mfe />
+              </Suspense>} />
+            <Route path="/" element={
+              <Suspense fallback={<Loading />}>
+                <Home_mfe companyName={"Dummy Company"}/>
+              </Suspense>} />
           </Routes>
         </div>
       </Router>

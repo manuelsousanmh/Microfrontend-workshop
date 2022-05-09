@@ -54,6 +54,8 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
+        home: 'home@http://localhost:8082/remoteEntry.js',
+        contact: 'contact@http://localhost:8083/remoteEntry.js',
         about: 'about@http://localhost:8084/remoteEntry.js',
       },
     })

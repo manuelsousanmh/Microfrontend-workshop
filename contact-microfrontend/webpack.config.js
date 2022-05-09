@@ -1,4 +1,6 @@
 const path = require('path');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -46,5 +48,14 @@ module.exports = {
           },
         }]
     },
-    mode: 'development'
+    mode: 'development',
+    plugins: [
+      new ModuleFederationPlugin({
+        name: 'contact',
+        filename: 'remoteEntry.js',
+        exposes: {
+          './Contact': './src/views/contact/contact',
+        },
+      })
+    ]
 };

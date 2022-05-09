@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Home from './views/home/home';
 
 class App extends React.Component {
   render() {
     return (
-      <h1>Welcome to REACT</h1>
+      <Home companyName="Checkmarx"/>
     );
   }
 }
