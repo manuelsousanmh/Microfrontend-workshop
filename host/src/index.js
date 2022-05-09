@@ -43,12 +43,8 @@ class App extends Component {
         <div className="main-content">
           <Routes>
             <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={
-              <Suspense fallback={<Loading />}>
-                <About_mfe />
-              </Suspense>
-            } />
-            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/" element={<Home companyName="Dummy Company"/>} />
           </Routes>
         </div>
       </Router>
